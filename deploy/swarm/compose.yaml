@@ -1,0 +1,79 @@
+# Docker Swarm stack "bartium" — bartium.io on the 3-Pi cluster.
+#
+# Deployed by Arcane's Git Sync (swarm mode), pointed at this file on master.
+# Git Sync is the only writer to this stack: deploy only what `master` says,
+# and roll back with `git revert` of the pin commit plus Arcane's next sync.
+#
+# Prereq — one external Swarm secret, created once on a manager (deploy/README.md):
+#   bartium_cloudflared   Cloudflare Tunnel token (remotely-managed)
+#
+# Ingress is the stack's OWN Cloudflare Tunnel: cloudflared dials out to the
+# edge, so nothing publishes a port. It reaches nginx at http://web:80 over the
+# `internal` overlay — the service VIP follows rescheduling, so cloudflared
+# never learns a node IP. The tunnel is remotely managed: the token identifies
+# it, and the public hostnames (bartium.io + www -> http://web:80) live in the
+# Zero Trust dashboard, not here.
+#
+# The `image:` line is written by CI (.github/workflows/build.yml): every green
+# build of master pins `:sha-<commit>` here and commits. The tag in git is the
+# deploy.
+
+networks:
+  internal:
+    driver: overlay
+
+secrets:
+  bartium_cloudflared:
+    external: true
+
+services:
+  web:
+    # Rewritten by CI to :sha-<commit> — see the header. `sha-unpinned`
+    # does not exist on purpose: nothing deploys until the first CI bump.
+    image: ghcr.io/bartkelchtermans/bartium-web:sha-unpinned
+    networks: [internal]
+    # Stateless nginx serving baked-in files: scale freely. Healthcheck is
+    # in the image, so start-first gates the rollout on real health.
+    deploy:
+      replicas: 2
+      placement:
+        preferences:
+          - spread: node.id
+      update_config:
+        order: start-first
+        failure_action: rollback
+        monitor: 30s
+      rollback_config:
+        order: start-first
+      restart_policy:
+        condition: any
+      # Headroom, not a measured peak: nginx serving static files off disk
+      # sits in the tens of MB. Tighten from the Arcane per-container view
+      # once it has run a while — do not tighten blind.
+      resources:
+        limits:
+          cpus: "1"
+          memory: 256M
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.8.3
+    # ENTRYPOINT is already `cloudflared --no-autoupdate`.
+    command: tunnel run
+    networks: [internal]
+    environment:
+      # `tunnel run` honours $TUNNEL_TOKEN_FILE, so the token stays a
+      # Swarm secret and never lands in the service spec. (The image is
+      # distroless — no shell for an entrypoint shim anyway.)
+      TUNNEL_TOKEN_FILE: /run/secrets/bartium_cloudflared
+    secrets:
+      - bartium_cloudflared
+    # Every replica registers as a connector on the same tunnel and
+    # Cloudflare load-balances across them, so one node dying keeps ingress.
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 128M
