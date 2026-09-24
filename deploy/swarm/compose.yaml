@@ -56,7 +56,7 @@ services:
           memory: 256M
 
   cloudflared:
-    image: cloudflare/cloudflared:2026.8.3
+    image: cloudflare/cloudflared:latest
     # ENTRYPOINT is already `cloudflared --no-autoupdate`.
     command: tunnel run
     networks: [internal]
@@ -67,10 +67,10 @@ services:
       TUNNEL_TOKEN_FILE: /run/secrets/bartium_cloudflared
     secrets:
       - bartium_cloudflared
-    # Every replica registers as a connector on the same tunnel and
-    # Cloudflare load-balances across them, so one node dying keeps ingress.
+    # One connector: the cluster is staging, so no HA. If its node dies,
+    # Swarm reschedules it on a live one.
     deploy:
-      replicas: 2
+      replicas: 1
       restart_policy:
         condition: any
       resources:

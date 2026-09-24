@@ -8,8 +8,8 @@ same files from this branch.
 |                 |                                                                                 |
 | --------------- | ------------------------------------------------------------------------------- |
 | Swarm stack     | `bartium`                                                                        |
-| Services        | `bartium_web` ×2 (nginx), `bartium_cloudflared` ×2                               |
-| Images          | `ghcr.io/bartkelchtermans/bartium-web:sha-<commit>`, `cloudflare/cloudflared:2026.8.3` |
+| Services        | `bartium_web` ×2 (nginx), `bartium_cloudflared` ×1                               |
+| Images          | `ghcr.io/bartkelchtermans/bartium-web:sha-<commit>`, `cloudflare/cloudflared:latest`   |
 | Source of truth | `deploy/swarm/compose.yaml` on `master`, deployed by Arcane Git Sync              |
 | Ingress         | Cloudflare Tunnel `bartium` — `bartium.io` + `www.bartium.io`, no published ports |
 
@@ -83,7 +83,7 @@ Create it only after the first CI run has pinned a real sha — the compose ship
 ### 5. Verify, then retire GitHub Pages
 
 ```sh
-docker service ls --filter name=bartium            # bartium_web 2/2, bartium_cloudflared 2/2
+docker service ls --filter name=bartium            # bartium_web 2/2, bartium_cloudflared 1/1
 curl -sI https://bartium.io/                       # 200
 curl -sI https://bartium.io/getting-started        # 200 — extensionless link resolves
 curl -sI https://www.bartium.io/                   # 200
