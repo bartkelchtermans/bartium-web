@@ -67,10 +67,10 @@ services:
       TUNNEL_TOKEN_FILE: /run/secrets/bartium_cloudflared
     secrets:
       - bartium_cloudflared
-    # One connector: the cluster is staging, so no HA. If its node dies,
-    # Swarm reschedules it on a live one.
+    # Every replica registers as a connector on the same tunnel and
+    # Cloudflare load-balances across them, so one node dying keeps ingress.
     deploy:
-      replicas: 1
+      replicas: 2
       restart_policy:
         condition: any
       resources:
