@@ -30,7 +30,8 @@
     <!-- PACE -->
     <script src="js/pace.min.js"></script>
 
-    <script defer src="https://umami.drunik.be/script.js" data-website-id="a98dcdd0-39cf-417d-9b6c-45de4330a66a" data-domains="bartium.io"></script>
+    <script defer src="https://umami.drunik.be/script.js" data-website-id="a98dcdd0-39cf-417d-9b6c-45de4330a66a" data-domains="bartium.io" data-performance="true"></script>
+    <script defer src="https://umami.drunik.be/recorder.js" data-website-id="a98dcdd0-39cf-417d-9b6c-45de4330a66a"></script>
 </head>
 
 <body id="page-top">
@@ -50,6 +51,29 @@
                 <h2 style="font-size: 30px;">Collected information</h3>
                   <p>The Bartium client collects only general data for analytics. <br> This data includes stats such as session count, session length, operating system, etc. </p>
                   <p>All passwords, cache and personal data is saved locally and cannot be accessed by other users or developers in any way.</p>
+              </div>
+
+              <div style="margin-bottom: 30px;">
+                <h2 style="font-size: 30px;">This website</h2>
+                  <p>Separately from the Bartium client, this website counts visits. There is no cookie banner because the site stores nothing on your device, and nothing is sold, shared with advertisers, or sent to an analytics company.</p>
+
+                  <p><strong>Who runs it.</strong> This site belongs to Bart Kelchtermans. Its analytics are collected with <a href="https://umami.is" rel="noopener noreferrer nofollow">Umami</a>, an open-source package, self-hosted by Andrei Lavrenov on private infrastructure at <code>umami.drunik.be</code>. Stated precisely: the two of us are the only people who see this data. No analytics vendor, advertising network or data broker is involved.</p>
+
+                  <p><strong>Nothing is stored on your device.</strong> The tracker sets no cookies and writes nothing to localStorage, sessionStorage or IndexedDB. The only value it reads is the opt-out flag below, and only if you set it. The EU cookie rule governs storing or reading data on your device &mdash; this site does neither.</p>
+
+                  <p><strong>What is collected.</strong> Pages you open (path, title, referring URL); browser, operating system, device type, screen size and language; approximate location &mdash; country, region, city &mdash; derived from your IP address; loading performance (Core Web Vitals: LCP, FCP, CLS, INP, TTFB) and time on page; clicks on tagged elements; and a recording of roughly one visit in seven.</p>
+
+                  <p><strong>Session recordings.</strong> About 15% of visits are recorded. A recording is not video and not a capture of your screen: the page structure and its text are re-serialised and replayed. Anything typed into a form field is masked inside your own browser before it is sent, so the value never leaves your device. Heatmaps are aggregates built from these recordings.</p>
+
+                  <p><strong>How a visit is identified.</strong> Each visit carries a one-way hash of your IP address, browser user-agent, hostname and site identifier. It cannot be reversed into an IP address and is not reused on other sites, so you are not followed across the web. Your IP address is processed to produce that hash and to resolve the location above. Stated plainly rather than marketed: an IP address is personal data under the GDPR, and a hash made from one is pseudonymous rather than anonymous. The lawful basis is legitimate interest under Article 6(1)(f).</p>
+
+                  <p><strong>Retention.</strong> Analytics records are kept until deleted by hand. No automatic expiry is configured.</p>
+
+                  <p><strong>Your rights.</strong> You may request access to data concerning you, request erasure, or object to collection. Because a visit carries only an irreversible hash, your records generally cannot be singled out from anyone else's, which is why the opt-out below is the dependable remedy. For anything else, write to <a href="mailto:bart.kelchtermans@outlook.com">bart.kelchtermans@outlook.com</a>.</p>
+
+                  <p><strong>Opt out.</strong> This sets one flag in this browser, on this device, which the tracker checks before sending anything. It is the only thing this site ever writes locally.</p>
+                  <p><button id="umami-optout" type="button">checking&hellip;</button></p>
+                  <p id="umami-optout-state" aria-live="polite"></p>
               </div>
               <!-- <div style="margin-bottom: 30px;">
                 <h2 style="font-size: 30px;">Using the sidebar</h3>
@@ -88,6 +112,7 @@
     </footer>
 
     <!-- jQuery -->
+    <script src="js/privacy-optout.js"></script>
     <script src="lib/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
