@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bartium</title>
+  <title>Download — Bartium</title>
   <meta name="description" content="The desktop client of everything.">
   <meta name="author" content="Bart Kelchtermans">
   <link rel="shortcut icon" href="img/Bartium.ico">
@@ -22,13 +22,14 @@
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
+  <script defer src="https://umami.lav.ren/script.js" data-website-id="a98dcdd0-39cf-417d-9b6c-45de4330a66a" data-domains="bartium.io"></script>
 </head>
 
 <body>
   <header role="banner" class="probootstrap-header">
     <div class="container-fluid">
       <div class="probootstrap-logo hidden-xs">
-        <a href="https://bartium.io/"><img src="img/Icon_OverlayWhite.png" style="height: 30px;"></img></a>
+        <a href="https://bartium.io/"><img src="img/Icon_OverlayWhite.png" alt="Bartium" style="height: 30px;"></a>
         <a href="https://bartium.io/" class="probootstrap-name hidden-sm">Bartium</a>
       </div>
 
@@ -53,7 +54,7 @@
           </div>
         </div>
       </section>
-      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="headerCurve" fill="blue" role="presentation"
+      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" fill="blue" role="presentation"
         aria-hidden="true" style="margin-left: -30px; margin-bottom: -11px; width: 115%; margin-top: -4em;">
         <polygon points="0 0 0 70 1280 70" fill="#ecedee"></polygon>
       </svg>
@@ -166,9 +167,7 @@
   <script src="js/main.js"></script>
   <script src="js/custom.js"></script>
 
-  <script>
-    document.getElementById('download').click();
-  </script>
+  <script src="js/download-autostart.js"></script>
 
 </body>
 
