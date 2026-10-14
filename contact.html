@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bartium</title>
+  <meta name="description" content="The desktop client of everything.">
+  <meta name="author" content="Bart Kelchtermans">
+  <link rel="shortcut icon" href="img/Bartium.ico">
+  <meta name="keywords" content="web handler, desktop client, native desktop, web services, desktop application">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles-merged.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container-fluid">
+      <!-- <div class="row"> -->
+      <div class="probootstrap-logo hidden-xs">
+        <a href="https://bartium.io/"><img src="img/Icon_OverlayWhite.png" style="height: 30px;"></img></a>
+        <a href="https://bartium.io/" class="probootstrap-name hidden-sm">Bartium</a>
+      </div>
+
+      <nav role="navigation" class="probootstrap-nav">
+        <ul class="probootstrap-main-nav">
+          <li><a href="https://bartium.io/">About</a></li>
+          <li><a href="features">Features</a></li>
+          <li><a href="pricing">Pricing</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li class="probootstrap-cta hidden-xs"><a href="download">Download</a></li>
+        </ul>
+      </nav>
+
+      <section class="probootstrap-intro2" style="margin-bottom: 3%;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+            </div>
+          </div>
+        </div>
+      </section>
+      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="headerCurve" fill="blue" role="presentation"
+        aria-hidden="true" style="margin-left: -30px; margin-bottom: -11px; width: 150%">
+        <polygon points="0 0 0 70 1280 70" fill="#ecedee"></polygon>
+      </svg>
+    </div>
+  </header>
+
+  <section class="probootstrap-section" style="margin-top: -5%; min-height: 47vh;">
+    <div class="container">
+
+      <div class="probootstrap-gutter0 mb80 col-md-offset-3" style="margin-top: -120px;">
+        <div class="col-md-9 probootstrap-pricing-wrap probootstrap-animate">
+          <div class="probootstrap-pricing">
+
+            <div class="dropdown" style="width: 42%; margin-left: 29%; margin-bottom: 15px;">
+              <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Reach out
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <span class="dropdown-item active" id="drop_reach_out" href="">Reach out</span>
+                <span class="dropdown-item" id="drop_bug_report" href="">Bug report</span>
+                <span class="dropdown-item" id="drop_enterprise" href="#">Request an Enterprise plan</span>
+                <span class="dropdown-item" id="drop_custom" href="#">Request a custom plan</span>
+                <span class="dropdown-item" id="drop_feature_request" href="#">Feature request</span>
+              </div>
+            </div>
+
+            <p class="col-md-12 feature-body" id="contact_body">We love to hear what our users are thinking!</p>
+
+            <form autocomplete="off" action="php/reachout.php" method="POST" id="reach_out"
+              style="display: block;">
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" name="country" placeholder="">
+              </div>
+              <div class="form-group col-md-8" style="text-align: left">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email or send you anything
+                  unrequested.</small>
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="plan">Plan</label>
+                <select class="custom-select" name="plan">
+                  <option value="1">Basic</option>
+                  <option value="2">Enterprise</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12" style="text-align: left">
+                <label for="message">Message</label>
+                <textarea type="text" class="form-control" id="message" name="message" placeholder="Tell us what you think"></textarea>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-outline">Submit</button>
+            </form>
+
+
+
+            <form action="php/bugreport.php" method="POST" id="bug_report" style="display: none;">
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" name="country">
+              </div>
+              <div class="form-group col-md-8" style="text-align: left">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email or send you anything
+                  unrequested.</small>
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="plan">Plan</label>
+                <select class="custom-select" name="plan">
+                  <option value="1">Basic</option>
+                  <option value="2">Enterprise</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12" style="text-align: left">
+                <label for="message"> Behavior</label>
+                <textarea type="text" class="form-control" id="message" name="message" placeholder="Describe the problem"></textarea>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-outline">Submit</button>
+            </form>
+
+
+
+
+            <form action="php/enterpriseplan.php" method="POST" id="enterprise_plan" style="display: none;">
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" name="country">
+              </div>
+              <div class="form-group col-md-8" style="text-align: left">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email or send you anything
+                  unrequested.</small>
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="companysize">Company size</label>
+                <select class="custom-select" name="companysize">
+                  <option value="1">0 - 9</option>
+                  <option value="2">10 - 29</option>
+                  <option value="3">30 - 49</option>
+                  <option value="4">50 - 99</option>
+                  <option value="5">100+</option>
+                </select>
+              </div>
+              <br>
+              <div class="col-md-12"><button type="submit" class="btn btn-outline">Submit</button></div>
+            </form>
+
+
+
+
+            <form action="php/customplan.php" method="POST" id="custom_plan" style="display: none;">
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" name="country">
+              </div>
+              <div class="form-group col-md-8" style="text-align: left">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email or send you anything
+                  unrequested.</small>
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="companysize">Company size</label>
+                <select class="custom-select" name="companysize">
+                  <option value="1">0 - 9</option>
+                  <option value="2">10 - 29</option>
+                  <option value="3">30 - 49</option>
+                  <option value="4">50 - 99</option>
+                  <option value="4">100+</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12" style="text-align: left">
+                <label for="message">Custom features</label>
+                <textarea type="text" class="form-control" name="message" id="message" placeholder="What would you like to see in your custom plan?"></textarea>
+              </div>
+              <br>
+              <div class="col-md-12"><button type="submit" class="btn btn-outline">Submit</button></div>
+            </form>
+
+
+
+
+            <form action="php/featurerequest.php" method="POST" id="feature_request" style="display: none;">
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName">
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" name="country">
+              </div>
+              <div class="form-group col-md-8" style="text-align: left">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email or send you anything
+                  unrequested.</small>
+              </div>
+              <div class="form-group col-md-4" style="text-align: left">
+                <label for="plan">Plan</label>
+                <select class="custom-select" name="plan">
+                  <option value="1">Basic</option>
+                  <option value="2">Enterprise</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12" style="text-align: left">
+                <label for="message">Feature</label>
+                <textarea type="text" class="form-control" id="message" name="message" placeholder="Tell us what you think"></textarea>
+              </div>
+              <br>
+
+              <button type="submit" class="btn btn-outline">Submit</button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo" class="probootstrap-footer">
+    <div class="container">
+      <div class="col-lg-12 section-heading" style="padding-left: 5%;">
+        <div class="col-sm-2 col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Bartium</h3>
+            <a href="https://bartium.io/" class="link-with-icon">About <i class=" icon-chevron-right"></i></a><br>
+            <a href="features" class="link-with-icon">Features <i class=" icon-chevron-right"></i></a><br>
+            <a href="pricing" class="link-with-icon">Pricing <i class=" icon-chevron-right"></i></a><br>
+            <a href="download" class="link-with-icon">Download <i class=" icon-chevron-right"></i></a><br>
+            <a href="release-notes" class="link-with-icon">Release notes <i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-footer col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Help & Support</h3>
+            <a href="support" class="link-with-icon">Support Center <i class=" icon-chevron-right"></i></a><br>
+            <a href="getting-started" class="link-with-icon">Quick start <i class=" icon-chevron-right"></i></a><br>
+            <a href="for-companies" class="link-with-icon">Bartium for companies<i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Contact</h3>
+            <a href="contact" class="link-with-icon" style="color: #24b367">Contact <i class=" icon-chevron-right"></i></a><br>
+            <a href="https://discord.gg/c6UYwkh" class="link-with-icon">Discord <i class=" icon-chevron-right"></i></a><br>
+            <a href="https://www.reddit.com/r/bartium" class="link-with-icon">Reddit <i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-footer col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Legal</h3>
+            <a href="privacy" class="link-with-icon">Privacy policy <i class=" icon-chevron-right"></i></a><br>
+          </div>
+        </div>
+        <div class="col-sm-3  col-xs-12" style="margin-bottom: 10px;">
+          <div class="probootstrap-footer-widget">
+            <h3>Download</h3>
+            <a href="download" class="link-with-icon">Download for Windows &nbsp; <i class="icon-windows8"></i></a><br>
+            <a href="#" class="link-with-icon">Download for MacOS &nbsp; <i class="icon-appleinc"></i></a><br>
+            <a href="#" class="link-with-icon">Download for Linux &nbsp; <i class="icon-tux"></i></a><br>
+          </div>
+        </div>
+        <div class="col-xs-12" style="text-align: center; line-height: 1.3">
+          <span>Bartium is not sponsored by or affiliated with any of the aforementioned web services. Design and
+            development by <a href="https://aboutbart.com">Bart Kelchtermans</a>. Reach us at <a href="mailto:support@bartium.io">support@bartium.io</a></span>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <script src="js/autocomplete.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/custom.js"></script>
+
+  <script>
+    let countryboxes = document.getElementsByName("country");
+    for (let i = 0; i < countryboxes.length; i++) {
+      autocomplete(countryboxes[i], countries);
+      
+    }
+
+    // autocomplete(document.getElementById("country"), countries);
+  </script> 
+
+</body>
+
+</html>

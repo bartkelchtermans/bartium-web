@@ -2,137 +2,154 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The desktop client of everything">
-    <meta name="author" content="Bart Kelchtermans">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bartium</title>
+  <meta name="description" content="The desktop client of everything.">
+  <meta name="author" content="Bart Kelchtermans">
+  <link rel="shortcut icon" href="img/Bartium.ico">
+  <meta name="keywords" content="web handler, desktop client, native desktop, web services, desktop application">
 
-    <link rel="shortcut icon" href="img/Bartium.ico">
-    <title>Bartium</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles-merged.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="lib/device-mockups/device-mockups.min.css">
-
-    <!-- Theme CSS -->
-    <link href="css/Bartium.css" rel="stylesheet">
-
-    <!-- PACE -->
-    <script src="js/pace.min.js"></script>
-
-    <script defer src="https://umami.lav.ren/script.js" data-website-id="a98dcdd0-39cf-417d-9b6c-45de4330a66a" data-domains="bartium.io"></script>
+  <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
 </head>
 
-<body id="page-top">
+<body>
 
+  <header role="banner" class="probootstrap-header">
+    <div class="container-fluid">
+      <div class="probootstrap-logo hidden-xs">
+        <a href="https://bartium.io/"><img src="img/Icon_OverlayWhite.png" style="height: 30px;"></img></a>
+        <a href="https://bartium.io/" class="probootstrap-name hidden-sm">Bartium</a>
+      </div>
 
+      <nav role="navigation" class="probootstrap-nav">
+        <ul class="probootstrap-main-nav">
+          <li><a href="https://bartium.io/">About</a></li>
+          <li><a href="features">Features</a></li>
+          <li><a href="pricing">Pricing</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li class="probootstrap-cta hidden-xs"><a href="download">Download</a></li>
+        </ul>
+      </nav>
 
-    <section id="about" class="features bg-primary" style="padding: 30px;">
+      <section class="probootstrap-intro2">
         <div class="container">
-              <div>
-                  <h2>Getting started</h2>
-                  <h3>An overview of Bartium, the desktop app of everything. <br>
-                      What it is, how it works and how to use it.</h3>
-              </div>
-        </div>
-    </section>
-
-    <!-- <section style="background-color: #24b367; padding: 1%">
-    </section> -->
-
-    <section id="services" class="features" style="padding: 30px; padding-left: 60px;">
-        <div class="container">
-            <div class="row">
-                <div style="margin-bottom: 30px;">
-                  <h2 style="font-size: 30px;">What is Bartium?</h3>
-                  <p> Bartium is designed to give any webpage or web service a desktop client, this way you don't need a number of seperate desktop applications, or web browser tabs. <br>
-                      Apart from the improved user experience and resource management, Bartium offers every web service a native experience.</p>
-                </div>
-                <div style="margin-bottom: 30px;">
-                  <h2 style="font-size: 30px;">Using the sidebar</h3>
-                  <p> Most of your interaction with Bartium will happen within the left sidebar. <br>
-                      This can be opened or closed by pressing the menu button (three dashes) in the top bar, on the left hand side. <br>
-                      This sidebar can be used for: </p>
-                  <p style="margin-left: 5%; margin-top: -8px">
-                      <b style="color: #24b367">•</b> &nbsp Adding new services or groups.<br>
-                      <b style="color: #24b367">•</b> &nbsp Searching services. <br>
-                      <b style="color: #24b367">•</b> &nbsp Repositioning services with drag & drop. <br>
-                      <b style="color: #24b367">•</b> &nbsp Accessing the Bartium settings.
-                  </p>
-                </div>
-                <div style="margin-bottom: 30px;">
-                  <h2 style="font-size: 30px;">Getting familiar with services</h3>
-                  <p> Each service will be visible in the left sidebar, selecting it will activate it. <br>
-                      Another way to activate services is with ctrl + number. For instance, ctrl + 1 will open the first service. <br>
-                      When hovering over a service in the sidebar, additional options can be found when clicking the menu button (three dots). <br>
-                      These settings include: </p>
-                  <p style="margin-left: 5%; margin-top: -8px">
-                      <b style="color: #24b367">•</b> &nbsp Edit: edit a service's name, url or icon.<br>
-                      <b style="color: #24b367">•</b> &nbsp Refresh: refresh the web service. <br>
-                      <b style="color: #24b367">•</b> &nbsp Mute: mute the service's sound. <br>
-                      <b style="color: #24b367">•</b> &nbsp Deleting: delete the service.
-                  </p>
-                </div>
-                <div style="margin-bottom: 30px;">
-                  <h2 style="font-size: 30px;">Getting familiar with groups</h3>
-                  <p> Groups are a way to put services together. Groups can be opened or closed, revealing or hiding the containing services.<br>
-                      Services can be added to groups by editing the service or by dragging it in the group. <br>
-                      Groups, like services, have additions settings that include: </p>
-                  <p style="margin-left: 5%; margin-top: -8px">
-                      <b style="color: #24b367">•</b> &nbsp Edit: edit a group's name or icon.<br>
-                      <b style="color: #24b367">•</b> &nbsp Deleting: delete the group, and putting the containing services in the root.
-                  </p>
-                </div>
-                <!-- <div>
-                  <h2 style="font-size: 30px;">Bartium's desktop notifications</h3>
-                  <p>Included in the native experience are the desktop notifications, these can be toggled by pressing the bell icon in the top bar.</p>
-                </div> -->
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="probootstrap-animate" style="font-size: 2.5em;">Getting started</h1>
+              <h2 class="probootstrap-animate" style="margin-top: 5px;">How to get up and running with your Bartium
+                client</h2>
             </div>
-            <div class="row" style="text-align: center">
-
-            </div>
+          </div>
         </div>
-    </section>
+      </section>
+    </div>
+  </header>
 
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2018 Bart Kelchtermans. All Rights Reserved.</p>
-            <ul class="list-inline">
-              <li>
-                  <a href="http://bartium.io/getting-started">Getting started</a>
-              </li>
-              <li>
-                  <a href="http://bartium.io/privacy">Privacy</a>
-              </li>
-              <li>
-                  <a href="http://bartium.io/legal">Legal</a>
-              </li>
-            </ul>
+  <section class="probootstrap-section probootstrap-page">
+    <div class="container">
+      <div class="col-md-4 release getting-started">
+        <h2>Bartium support center</h2>
+        <a href="getting-started" class="link-with-icon">Getting started<i class=" icon-chevron-right"></i></a><br>
+        <a href="contact" class="link-with-icon">Pricing & Plans<i class=" icon-chevron-right"></i></a><br>
+        <a href="contact" class="link-with-icon">Getting in touch<i class=" icon-chevron-right"></i></a><br>
+        <a href="contact" class="link-with-icon">Bugs & Problems<i class=" icon-chevron-right"></i></a><br>
+        <a href="contact" class="link-with-icon">Feature requests<i class=" icon-chevron-right"></i></a><br>
+        <a href="contact" class="link-with-icon">Press kit<i class=" icon-chevron-right"></i></a><br>
+      </div>
+      <div class="col-md-8">
+        <div class="col-md-12 getting-started probootstrap-animate">
+          <h4>What is Bartium?</h4>
+          <p> Bartium is designed to give any webpage or web service a desktop client, this way you don't need a number
+            of seperate desktop applications, or web browser tabs. <br>
+            Apart from the improved user experience and resource management, Bartium offers every web service a native
+            experience.</p>
+          <h4>Using the sidebar</h4>
+          <p> Most of your interaction with Bartium will happen within the left sidebar. <br>
+            This can be opened or closed by pressing the menu button (three dashes) in the top bar, on the left hand
+            side. <br></p>
+          <h4>Getting familiar with services</h4>
+          <p> Each service will be visible in the left sidebar, selecting it will activate it. <br>
+            Another way to activate services is with ctrl + number. For instance, ctrl + 1 will open the first service.
+            <br>
+            When hovering over a service in the sidebar, additional options can be found when clicking the menu button
+            (three dots).</p>
+          <h4>Getting familiar with groups</h4>
+          <p> Groups are a way to put services together. Groups can be opened or closed, revealing or hiding the
+            containing services.<br>
+            Services can be added to groups by editing the service or by dragging it in the group. <br>
+            Groups, like services, have additional settings.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- jQuery -->
-    <script src="lib/jquery/jquery.min.js"></script>
+  <footer role="contentinfo" class="probootstrap-footer">
+    <div class="container">
+      <div class="col-lg-12 section-heading" style="padding-left: 5%;">
+        <div class="col-sm-2 col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Bartium</h3>
+            <a href="https://bartium.io/" class="link-with-icon">About <i class=" icon-chevron-right"></i></a><br>
+            <a href="features" class="link-with-icon">Features <i class=" icon-chevron-right"></i></a><br>
+            <a href="pricing" class="link-with-icon">Pricing <i class=" icon-chevron-right"></i></a><br>
+            <a href="download" class="link-with-icon">Download <i class=" icon-chevron-right"></i></a><br>
+            <a href="release-notes" class="link-with-icon">Release notes <i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-footer col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Help & Support</h3>
+            <a href="support" class="link-with-icon">Support Center <i class=" icon-chevron-right"></i></a><br>
+            <a href="getting-started" class="link-with-icon" style="color: #24b367">Quick start <i class=" icon-chevron-right"></i></a><br>
+            <a href="for-companies.html" class="link-with-icon">Bartium for companies<i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Contact</h3>
+            <a href="contact" class="link-with-icon">Contact <i class=" icon-chevron-right"></i></a><br>
+            <a href="https://discord.gg/c6UYwkh" class="link-with-icon">Discord <i class=" icon-chevron-right"></i></a><br>
+            <a href="https://www.reddit.com/r/bartium" class="link-with-icon">Reddit <i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-footer col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Legal</h3>
+            <a href="privacy" class="link-with-icon">Privacy policy <i class=" icon-chevron-right"></i></a><br>
+          </div>
+        </div>
+        <div class="col-sm-3  col-xs-12" style="margin-bottom: 10px;">
+          <div class="probootstrap-footer-widget">
+            <h3>Download</h3>
+            <a href="download" class="link-with-icon">Download for Windows &nbsp; <i class="icon-windows8"></i></a><br>
+            <a href="#" class="link-with-icon">Download for MacOS &nbsp; <i class="icon-appleinc"></i></a><br>
+            <a href="#" class="link-with-icon">Download for Linux &nbsp; <i class="icon-tux"></i></a><br>
+          </div>
+        </div>
+        <div class="col-xs-12" style="text-align: center; line-height: 1.3">
+          <span>Bartium is not sponsored by or affiliated with any of the aforementioned web services. Design and
+            development by <a href="https://aboutbart.com">Bart Kelchtermans</a>. Reach us at <a href="mailto:support@bartium.io">support@bartium.io</a></span>
+        </div>
+      </div>
+    </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  </footer>
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/Bartium.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/custom.js"></script>
 
 </body>
 

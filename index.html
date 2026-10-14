@@ -2,256 +2,323 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The desktop client of everything">
-    <meta name="author" content="Bart Kelchtermans">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bartium</title>
+  <meta name="description" content="The desktop client of everything.">
+  <meta name="author" content="Bart Kelchtermans">
+  <link rel="shortcut icon" href="img/Bartium.ico">
+  <meta name="keywords" content="web handler, desktop client, native desktop, web services, desktop application">
 
-    <link rel="shortcut icon" href="img/Bartium.ico">
-    <title>Bartium</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles-merged.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="lib/device-mockups/device-mockups.min.css">
-
-    <!-- Theme CSS -->
-    <link href="css/Bartium.css" rel="stylesheet">
-
-    <!-- PACE -->
-    <script src="js/pace.min.js"></script>
-
-    <script defer src="https://umami.lav.ren/script.js" data-website-id="a98dcdd0-39cf-417d-9b6c-45de4330a66a" data-domains="bartium.io"></script>
+  <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
 </head>
 
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-
-            <div class="navbar-header">
-                <a class="page-scroll"  href="#page-top"><img src="img/Icon.png" style="height:37px; display: block; float: left; padding-top: 10px; margin-right: 10px;"></img></a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <!-- <img src="img/Icon.png" style="height: 20px;"> -->
-                <a class="navbar-brand page-scroll" href="#page-top">Bartium</a>
-
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                      <a class="page-scroll" href="#about">About</a>
-                  </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#download" style="font-size: 15px;">Download</a>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="header-content" style="text-align:center">
-                        <div class="header-content-inner" style="position: relative">
-                            <h1 style="font-size: 8vh;">The desktop client of <u>everything</u>.</h1>
-                            <h1 style="font-size: 2.3vh;">Bartium is designed to centralize all your web services in one compact, lightweight desktop application.</h1>
-                            <a href="#download" class="btn btn-outline btn-xl page-scroll" style="margin-top: 25px; text-align: center">Download now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12">
-
-                    <div class="device-container hide-small">
-                      <img src="img/screenshot.png" style="width: 100%"></img>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="about" class="features bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-heading">
-                        <h2>Meet the first web handler, ever.</h2>
-                        <p class="">Your web browser was meant to browse the web. Bartium was built to handle it.</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-4" style="float:left">
-                <img src="img/BartiumFinal.png" style="postition: absolute; width: 100%"></img>
-              </div>
-              <div class="col-lg-8" style="float:right;">
-                <div class="row" style="margin-left: 10%; margin-bottom:2%">
-                  <h3 style="margin-left: 10%"><i class="fa fa-leaf fa-fw" style="margin-right: 10px"></i>Lightweight and compact</h3>
-                  Built on the Chromium framework, Bartium makes for a light application that can carry a heavy load.
-                </div>
-                <div class="row" style="margin-left: 10%; margin-bottom:2%">
-                  <h3 style="margin-left: 10%"><i class="fa fa-laptop fa-fw" style="margin-right: 10px"></i>Native desktop experience</h3>
-                  Native desktop notifications, vastly improved resource management and so much more.
-                </div>
-                <div class="row" style="margin-left: 10%; margin-bottom:2%">
-                  <h3 style="margin-left: 10%"><i class="fa fa-flash fa-fw" style="margin-right: 10px"></i>Web browser and OS efficiency</h3>
-                  By letting Bartium do the heavy lifting, there's no need to run a number of background applications and you can use your browser for it's original purpose, to browse.
-                </div>
-                <div class="row" style="margin-left: 10%; margin-bottom:2%">
-                  <h3 style="margin-left: 10%"><i class="fa fa-paint-brush fa-fw" style="margin-right: 10px"></i>Customizability</h3>
-                   Bartium is yours. The potential is limitless. Customize it to fit your needs.
-                </div>
-              </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- <section style="background-color: #24b367; padding: 1%">
-    </section> -->
-
-    <section id="services" class="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-heading">
-                        <h2>Support for pretty much anything.</h2>
-                        <p class="text-muted">Built like a web browser, it supports just about any website or web service available.</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="row hide-small" style="text-align: center">
-                <div style="width: 20%; float: left">
-                  <h3 style="margin-bottom: 40px">Productivity</h3>
-                  <img src="img/services/service-evernote.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-gkeep.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                  <img src="img/services/service-gdocs.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-office.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-slack.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                </div>
-                <div style="width: 20%; float: left">
-                  <h3 style="margin-bottom: 40px">Messaging</h3>
-                  <img src="img/services/service-messenger.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-whatsapp.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                  <img src="img/services/service-skype.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                  <img src="img/services/service-hangouts.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                  <img src="img/services/service-discord.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                </div>
-                <div style="width: 20%; float: left">
-                  <h3 style="margin-bottom: 40px">Email</h3>
-                  <img src="img/services/service-gmail.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-outlook.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                  <img src="img/services/service-ymail.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                  <img src="img/services/service-yandexmail.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                  <img src="img/services/service-alto.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto;  margin-bottom: 10px">
-                </div>
-                <div style="width: 20%; float: left">
-                  <h3 style="margin-bottom: 40px">Files & Storage</h3>
-                  <img src="img/services/service-dropbox.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-gdrive.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-onedrive.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-mega.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-icloud.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                </div>
-                <div style="width: 20%; float: left">
-                  <h3 style="margin-bottom: 40px">Entertainment</h3>
-                  <img src="img/services/service-netflix.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-trakt.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-twitch.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-spotify.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                  <img src="img/services/service-soundcloud.png" class="img-responsive" alt="" style="max-width: 80px; margin: 0 auto; margin-bottom: 10px">
-                </div>
-                <!-- <div class="col-md-2">
-                  <i class="fa fa-plus fa-5x" style="margin-top: 165%"></i>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
-    <section id="download" class="download bg-primary text-center">
-      <div class="row" style="margin-bottom: 50px; width: 100%">
-        <h1 style="margin-bottom: 0px;  font-size: 50px;">Download Bartium</h1>
-        version 0.5.16 - beta build
-        <!-- Coming 10th of July. -->
-        <!-- Coming 25.06.17 -->
+<body>
+  <header role="banner" class="probootstrap-header">
+    <div class="container-fluid">
+      <div class="probootstrap-logo hidden-xs">
+        <a href="https://bartium.io/"><img src="img/Icon_OverlayWhite.png" style="height: 30px;"></img></a>
+        <a href="https://bartium.io/" class="probootstrap-name">Bartium</a>
       </div>
+
+      <nav role="navigation" class="probootstrap-nav">
+        <ul class="probootstrap-main-nav">
+          <li><a href="https://bartium.io/">About</a></li>
+          <li><a href="features">Features</a></li>
+          <li><a href="pricing">Pricing</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li class="probootstrap-cta hidden-xs"><a href="download">Download</a></li>
+        </ul>
+      </nav>
+
+      <section class="probootstrap-intro">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4" style="text-align: center">
-                  <img src="img/img-windows.png" class="img-responsive" alt="" style="max-width: 120px; margin: 0 auto">
-                  <a href="https://github.com/bartkelchtermans/BartiumWeb/releases/download/v0.5.16/Bartium.Setup.0.5.16.exe" class="btn btn-primary page-scroll" style="margin-top: 40px; margin-bottom: 10px;"><i class="fa fa-windows" style="margin-right: 8px;"></i>Windows 7+</a>
-                  <br>
-                  <!-- <a href="#download" style="color: #fff;">32-bit download</a> -->
-                </div>
-                <div class="col-md-4">
-                  <img src="img/img-apple.png" class="img-responsive" alt="" style="max-width: 120px; margin: 0 auto">
-                  <a href="#download" class="btn disabled btn-primary page-scroll" style="margin-top: 40px; margin-bottom: 10px;"><i class="fa fa-apple" style="margin-right: 8px;"></i>OSX 10.9+</a>
-                  <br>
-                  <div href="#download" style="color: #fff;">Not yet available  </div>
-                </div>
-                <div class="col-md-4">
-                  <img src="img/img-linux.png" class="img-responsive" alt="" style="max-width: 120px; margin: 0 auto">
-                  <a href="#download" class="btn disabled btn-primary page-scroll" style="margin-top: 40px; margin-bottom: 10px;"><i class="fa fa-linux" style="margin-right: 8px;"></i>Linux</a>
-                  <br>
-                  <div href="#download" style="color: #fff;">Not yet available  </div>
-                </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="probootstrap-animate" style="margin-bottom: 20px;">The desktop client of <div id="sequence">&nbsp;</div>
+                .</h1>
+              <div class="probootstrap-subtitle probootstrap-animate" style="margin-bottom: -30px;">
+                <h2>Bartium is designed to centralize all your web services in one compact, lightweight desktop
+                  application.</h2>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
+      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="headerCurve" fill="blue" role="presentation"
+        aria-hidden="true" style="margin-left: -30px; margin-bottom: -11px; width: 150%">
+        <polygon points="0 0 0 70 1280 70" fill="#ecedee"></polygon>
+      </svg>
+    </div>
+  </header>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2018 Bart Kelchtermans. All Rights Reserved.</p>
-            <ul class="list-inline">
-                <li>
-                    <a href="http://bartium.io/getting-started">Getting started</a>
-                </li>
-                <li>
-                    <a href="http://bartium.io/privacy">Privacy</a>
-                </li>
-                <li>
-                    <a href="http://bartium.io/legal">Legal</a>
-                </li>
-                <!-- <li>
-                    <a href="#">FAQ</a>
-                </li> -->
-            </ul>
+  <section class="probootstrap-section probootstrap-feature-first" style="padding: 15em 0 3em 0">
+    <div class="container">
+      <div class="mb0 probootstrap-animate">
+        <img src="img/screenshot.png" alt="Screenshot" class="img-responsive shadow-heavy">
+      </div>
+    </div>
+  </section>
+
+  <section class="probootstrap-section probootstrap-inter" style="margin-top: -30vh; margin-bottom: 10vh;">
+    <div class="container" style="margin-bottom: -18vh">
+      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="headerCurve" fill="blue" role="presentation"
+        aria-hidden="true" style="position: absolute; right: 0px; bottom: -1px;">
+        <polygon points="1280 0 1280 100 -10 70" fill="#ecedee"></polygon>
+      </svg>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 section-heading mb40 text-center probootstrap-animate" style="margin-top: 0vh">
+          <h2 class="section-title">Meet the first web handler, ever.</h2>
+          <p class="lead">Your web browser was meant to browse the web. Bartium was built to
+            handle it.</p>
         </div>
-    </footer>
+      </div>
+      <div class="row">
+        <div class="" style="margin-top: 0vh; color: #7e8890">
+          <div class="col-md-3">
+            <div class="probootstrap-box probootstrap-animate">
+              <h3 class="probootstrap-box-title">Peace of mind</h3>
+              <p style="margin-bottom: -5px; margin-top: 20px; text-align: left; line-height: 22px; font-size: 18px;">One
+                single application to optimize your workflow. <br> No more switching applications or finding the right
+                browser tab.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="probootstrap-box probootstrap-animate">
+              <h3 class="probootstrap-box-title">Lightweight and compact</h3>
+              <p style="margin-bottom: -5px; margin-top: 20px; text-align: left; line-height: 22px; font-size: 18px;">Built
+                on the Chromium framework, Bartium makes for a light application that can carry a heavy load. </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="probootstrap-box probootstrap-animate">
+              <h3 class="probootstrap-box-title">Boosted efficiency</h3>
+              <p style="margin-bottom: -5px; margin-top: 20px; text-align: left; line-height: 22px; font-size: 18px;">By
+                letting Bartium do the heavy lifting, there's no need to run a number of background applications and
+                you can use your browser for it's original purpose, to browse. </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="probootstrap-box probootstrap-animate">
+              <h3 class="probootstrap-box-title">Customizability</h3>
+              <p style="margin-bottom: -5px; margin-top: 20px; text-align: left; line-height: 22px; font-size: 18px;">Bartium
+                is yours. The potential is limitless. Customize it to fit your needs. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- jQuery -->
-    <script src="lib/jquery/jquery.min.js"></script>
+  <section class="probootstrap-section section-heading-screens">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 section-heading probootstrap-animate" style="margin-bottom: 4%" data-animate-effect="fadeInLeft">
+          <h2>Unlimited services, unlimited potential.</h2>
+          <p class="lead">Add services by URL or choose from one of the many preset
+            services, grouped by category.</p>
+          <p class="lead">Efficient service management allows for fast switching and
+            minimized loading times.</p>
+        </div>
+        <div class="probootstrap-animate col-md-10 col-lg-7 col-md-push-6 md-absolute hidden-xs" data-animate-effect="fadeInRight">
+          <img src="img/multiscreens.png" alt="Screenshot" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <section class="probootstrap-section section-heading-screens section-native-exp" style="padding-bottom: 0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-pull-2 probootstrap-animate" data-animate-effect="fadeInLeft">
+          <img src="img/native.png" alt="Screenshot" class="img-responsive">
+        </div>
+        <div class="col-md-4 section-heading probootstrap-animate" data-animate-effect="fadeInRight">
+          <h2>Native desktop experience.</h2>
+          <p class="lead">Optimal coherence with the operating system guarantees features
+            like native desktop notifications.</p>
+          <p class="lead">Notifications group up in Windows Action Center or the macOS
+            notification center where they can be reviewed later or easily dismissed.</p>
+        </div>
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+      </div>
+    </div>
+  </section>
 
-    <!-- Theme JavaScript -->
-    <script src="js/Bartium.js"></script>
+  <section class="probootstrap-section section-heading-screens" style="padding-top: 0px; padding-bottom: 0px; margin-bottom: -1px;">
+    <div class="container">
+      <div class="row" style="margin-top: 1.2em;">
+        <div class="col-md-4 section-heading probootstrap-animate" data-animate-effect="fadeInLeft">
+          <h2>Superior account management</h2>
+          <p class="lead">All services have separate sessions and cookies so you can log in
+            with multiple accounts in different instances of the same service.</p>
+          <p class="lead">Sandboxed sessions also mean every service is secured and
+            shielded from harmful activities or other services.</p>
+        </div>
+        <div class="col-md-8 col-md-push-1 probootstrap-animate  xs-hidden" data-animate-effect="fadeInRight">
+          <img src="img/accounts.png" alt="Screenshot" class="img-responsive">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="probootstrap-section probootstrap-section-colored" style="padding: 5em 0 1.5em 0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 section-heading mb20 text-center probootstrap-animate" style="margin-top: -5vh">
+          <h2>More proof of excellence</h2>
+        </div>
+      </div>
+      <div class="row" style="line-height: 22px;">
+        <div class="col-md-3 col-xs-6 probootstrap-animate feature">
+          <h3 class="heading"><span>Service management</span></h3>
+          <p>Services aren't loaded unless you need them, and are placed in a frozen state when you don't.<br>Services
+            are also indexed and searchable.</p>
+        </div>
+        <div class="col-md-3 col-xs-6 probootstrap-animate feature">
+          <h3 class="heading"><span>Keyboard shortcuts</span></h3>
+          <p>A wide variety of keyboard shortcuts are at your disposal to increase efficiency and help you get where
+            you need to be faster.</p>
+        </div>
+        <div class="col-md-3 col-xs-6 probootstrap-animate feature">
+          <h3 class="heading"><span>Autoupdate</span></h3>
+          <p>Every client will stay up to date with the latest updates and features automatically.<br>No manual
+            downloads, no hassle. </p>
+        </div>
+        <div class="col-md-3 col-xs-6 probootstrap-animate feature">
+          <h3 class="heading"><span>Local user profile</span></h3>
+          <p>Each Bartium client is unique and has a local user profile to save your layout.<br>Every profile can be
+            imported or exported.</p>
+        </div>
+        <div class="clearfix visible-sm-block"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12 probootstrap-animate" style="text-align: right; margin-top: 0vh; margin-bottom: 4vh; z-index: 100">
+          <p class="see-list probootstrap-animate"><a href="features">See full list of features <i class="icon-chevron-right"></i></a></p>
+        </div>
+      </div>
+      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="headerCurve" fill="blue" role="presentation"
+        aria-hidden="true" style="position: absolute; left: 0px; bottom: -1px;">
+        <polygon points="0 0 0 70 1280 70" fill="#ecedee"></polygon>
+      </svg>
+    </div>
+  </section>
+
+  <section class="probootstrap-section section-heading-screens" style="margin-top: -10vh;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 section-heading mb50 text-center probootstrap-animate">
+          <h2 style="margin-bottom: 0px;">Download Bartium</h2>
+          <span class="download-info">Current version: 0.5.19 (beta)</span><br>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 3%">
+        <div class="col-sm-4 probootstrap-animate" style="text-align: center;">
+          <img src="img/img-windows.png" style="width: 100%; max-width: 150px;"></img> <br><br>
+          <a href="download" class="btn btn-outline">Windows</a>
+        </div>
+        <div class="col-sm-4 probootstrap-animate hidden-xs" style="text-align: center;">
+          <img src="img/img-apple.png" style="width: 100%; max-width: 150px;"></img> <br><br>
+          <a href="" class="btn disabled btn-outline" style="background: #24b367; color: white">MacOS</a>
+          <p style="margin-bottom: -15px; margin-top: 5px;">Coming soon</p>
+        </div>
+        <div class="col-sm-4 probootstrap-animate hidden-xs" style="text-align: center;">
+          <img src="img/img-linux.png" style="width: 100%; max-width: 150px;"></img> <br><br>
+          <a href="#" class="btn disabled btn-outline" style="background: #24b367; color: white">Linux</a>
+          <p style="margin-bottom: -15px; margin-top: 5px;">Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo" class="probootstrap-footer">
+    <div class="container">
+      <div class="col-lg-12 section-heading" style="padding-left: 5%;">
+        <div class="col-sm-2 col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Bartium</h3>
+            <a href="#" class="link-with-icon" style="color: #24b367">About <i class=" icon-chevron-right"></i></a><br>
+            <a href="features" class="link-with-icon">Features <i class=" icon-chevron-right"></i></a><br>
+            <a href="pricing" class="link-with-icon">Pricing <i class=" icon-chevron-right"></i></a><br>
+            <a href="download" class="link-with-icon">Download <i class=" icon-chevron-right"></i></a><br>
+            <a href="release-notes" class="link-with-icon">Release notes <i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-footer col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Help & Support</h3>
+            <a href="support" class="link-with-icon">Support Center <i class=" icon-chevron-right"></i></a><br>
+            <a href="getting-started" class="link-with-icon">Quick start <i class=" icon-chevron-right"></i></a><br>
+            <a href="for-companies" class="link-with-icon">Bartium for companies<i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Contact</h3>
+            <a href="contact" class="link-with-icon">Contact <i class=" icon-chevron-right"></i></a><br>
+            <a href="https://discord.gg/c6UYwkh" class="link-with-icon">Discord <i class=" icon-chevron-right"></i></a><br>
+            <a href="https://www.reddit.com/r/bartium" class="link-with-icon">Reddit <i class=" icon-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-footer col-xs-6">
+          <div class="probootstrap-footer-widget">
+            <h3>Legal</h3>
+            <a href="privacy" class="link-with-icon">Privacy policy <i class=" icon-chevron-right"></i></a><br>
+          </div>
+        </div>
+        <div class="col-sm-3  col-xs-12" style="margin-bottom: 1.2em;">
+          <div class="probootstrap-footer-widget">
+            <h3>Download</h3>
+            <a href="download" class="link-with-icon">Download for Windows &nbsp; <i class="icon-windows8"></i></a><br>
+            <a href="#" class="link-with-icon">Download for MacOS &nbsp; <i class="icon-appleinc"></i></a><br>
+            <a href="#" class="link-with-icon">Download for Linux &nbsp; <i class="icon-tux"></i></a><br>
+          </div>
+        </div>
+        <div class="col-xs-12" style="text-align: center; line-height: 1.3">
+        <span>Bartium is not sponsored by or affiliated with any of the aforementioned web services. Design and
+          development by <a href="https://aboutbart.com">Bart Kelchtermans</a>. Reach us at <a href="mailto:support@bartium.io">support@bartium.io</a></span>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="js/scripts.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/custom.js"></script>
+
+  <script>
+    var services = ['Messenger', 'Outlook', 'Netflix', 'Skype', 'Gmail', 'Whatsapp', 'Google Keep', 'Discord',
+      'Trello', 'Slack', 'Twitch', 'Spotify', 'Dropbox', 'Plex', 'Soundcloud', 'Evernote', 'Google Docs', 'Onedrive',
+      'Flipboard', 'Toggl', 'Speedtest', 'Instagram', 'Google Maps', 'Office 365', 'Duolingo', 'everything'
+    ];
+
+    textSequence(0);
+
+    function textSequence(i) {
+      if (services.length > i) {
+        setTimeout(function () {
+          document.getElementById("sequence").innerHTML = services[i];
+          textSequence(++i);
+        }, 500);
+
+      } else if (services.length == i) {
+        // textSequence(0);
+      }
+    }
+  </script>
 
 </body>
 
