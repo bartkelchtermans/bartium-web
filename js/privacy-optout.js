@@ -1,7 +1,7 @@
 /* Opt-out switch for the self-hosted Umami tracker.
  *
  * External on purpose: the site CSP is `script-src 'self' https://cdnjs.cloudflare.com
- * https://umami.drunik.be` (deploy/swarm/nginx.conf) with no 'unsafe-inline', so an
+ * https://umami.lav.ren` (deploy/swarm/nginx.conf) with no 'unsafe-inline', so an
  * inline block would be refused by the browser.
  *
  * The tracker reads localStorage['umami.disabled'] before every send and bails when it
