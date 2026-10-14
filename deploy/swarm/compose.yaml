@@ -30,7 +30,7 @@ services:
   web:
     # Rewritten by CI to :sha-<commit> — see the header. `sha-unpinned`
     # does not exist on purpose: nothing deploys until the first CI bump.
-    image: ghcr.io/bartkelchtermans/bartium-web:sha-41aa31dc09501ea7cc5e848a65f721b807d51d9c
+    image: ghcr.io/bartkelchtermans/bartium-web:sha-43728299adaa0f00087a9a40c85a42240eda7741
     networks: [internal]
     # Stateless nginx serving baked-in files: scale freely. Healthcheck is
     # in the image, so start-first gates the rollout on real health.
