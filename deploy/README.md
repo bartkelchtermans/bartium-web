@@ -1,8 +1,8 @@
-# Deploy — bartium.io on the Pi swarm
+# Deploy — bartium.io on the swarm
 
-`https://bartium.io` + `www` — the Bartium landing page, running on the three-Pi Docker Swarm,
+`https://bartium.io` + `www` — the Bartium landing page, running on the production Docker Swarm,
 deployed by Arcane Git Sync from what `master` says, reachable through its own Cloudflare Tunnel.
-`deploy/swarm/compose.yaml` is the single writer. This replaces GitHub Pages, which served the
+`deploy/production/compose.yaml` is the single writer. This replaces GitHub Pages, which served the
 same files from this branch.
 
 |                 |                                                                                 |
@@ -10,15 +10,32 @@ same files from this branch.
 | Swarm stack     | `bartium`                                                                        |
 | Services        | `bartium_web` ×2 (nginx), `bartium_cloudflared` ×2                               |
 | Images          | `ghcr.io/bartkelchtermans/bartium-web:sha-<commit>`, `cloudflare/cloudflared:latest`   |
-| Source of truth | `deploy/swarm/compose.yaml` on `master`, deployed by Arcane Git Sync              |
+| Source of truth | `deploy/production/compose.yaml` on `master`, deployed by Arcane Git Sync              |
 | Ingress         | Cloudflare Tunnel `bartium` — `bartium.io` + `www.bartium.io`, no published ports |
+
+## Environments
+
+Both environments follow `master` and run the same commit: CI pins the two compose files together.
+
+|         | Staging                        | Production                       |
+| ------- | ------------------------------ | -------------------------------- |
+| Site    | `staging.bartium.io`                | `bartium.io`                          |
+| Cluster | the three-Pi staging swarm     | the production swarm (`role == apps` nodes) |
+| Stack   | `bartium-staging`                | `bartium`                          |
+| Compose | `deploy/staging/compose.yaml`  | `deploy/production/compose.yaml` |
+| Tunnel  | `bartium.io (staging)`              | `bartium.io`                          |
+| Secret  | `staging_bartium_cloudflared`    | `bartium_cloudflared`              |
+
+The table above and the setup steps below describe production. Staging has the same shape with
+the names of this table. A Cloudflare rule sets `X-Robots-Tag: noindex, nofollow` on every
+`staging.*` host, so staging stays out of search.
 
 ## How a change ships
 
 1. Push to `master`.
 2. `.github/workflows/build.yml` builds `Dockerfile` for `linux/amd64,linux/arm64`, pushes
    `ghcr.io/bartkelchtermans/bartium-web:sha-<commit>` to GHCR, then rewrites the `image:` line
-   in `deploy/swarm/compose.yaml` to that tag and commits it (`chore(deploy): swarm → sha-…
+   in `deploy/production/compose.yaml` to that tag and commits it (`chore(deploy): staging + production → sha-…
    [skip ci]`).
 3. Arcane's Git Sync stack `bartium` polls `master` and redeploys on its next sync (5 min).
    There is no manual deploy command and no direct-deploy script.
@@ -59,7 +76,7 @@ printf '%s' "$CF_TUNNEL_TOKEN" | ssh swarm01 'docker secret create bartium_cloud
 
 `printf`, not `echo` — cloudflared reads the file raw and a trailing newline invalidates the
 token. Swarm secrets are immutable; to rotate, create a new name (`bartium_cloudflared_v2`) and
-change the reference in `deploy/swarm/compose.yaml`.
+change the reference in `deploy/production/compose.yaml`.
 
 ### 3. Arcane credentials
 
@@ -72,7 +89,7 @@ change the reference in `deploy/swarm/compose.yaml`.
 
 ### 4. Arcane Git Sync stack `bartium`
 
-Swarm mode, `deploy/swarm/compose.yaml` on `master`, `autoSync` with a 5-minute interval, and
+Swarm mode, `deploy/production/compose.yaml` on `master`, `autoSync` with a 5-minute interval, and
 **`redeployAfterSync: true`** — without it a synced compose change only updates the stored
 definition and never rolls the service. `projectName` must be exactly `bartium`: adoption of a
 running stack happens on an exact name match, and a near-miss deploys a second complete copy.
