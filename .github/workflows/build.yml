@@ -1,7 +1,8 @@
 name: Build
 
 # Every push to master: build the multi-arch site image, push it to GHCR as
-# :sha-<commit>, then pin that tag into deploy/swarm/compose.yaml and commit.
+# :sha-<commit>, then pin that tag into deploy/staging/compose.yaml and
+# deploy/production/compose.yaml and commit.
 # Arcane Git-Syncs the compose and redeploys on that commit — the image tag
 # in git IS the deploy, so rollback is `git revert` of the bump.
 #
@@ -16,7 +17,8 @@ on:
     # disagreeing about which commit is live.
     paths-ignore:
       - '**.md'
-      - 'deploy/swarm/compose.yaml'
+      - 'deploy/staging/compose.yaml'
+      - 'deploy/production/compose.yaml'
   workflow_dispatch:
 
 # Never cancel: two bump commits racing on master is a failed push for nothing.
@@ -80,18 +82,20 @@ jobs:
           # green while compose.yaml still names the previous sha — the site silently
           # stops receiving deploys. A hand-edit that quotes the value, or any YAML
           # formatter, is enough to trigger it.
-          grep -qE "^[[:space:]]*image: ghcr\.io/${REPO}:" deploy/swarm/compose.yaml || {
-            echo "::error::no 'image: ghcr.io/${REPO}:...' line in deploy/swarm/compose.yaml — the pin pattern did not match; refusing to no-op silently"
-            exit 1
-          }
-          sed -i -E "s#^([[:space:]]*image: ghcr\.io/${REPO}:).*#\1sha-${SHA}#" deploy/swarm/compose.yaml
-          grep -qF "image: ghcr.io/${REPO}:sha-${SHA}" deploy/swarm/compose.yaml || {
-            echo "::error::compose.yaml does not name sha-${SHA} after the rewrite — the pin did not take"
-            exit 1
-          }
+          for f in deploy/staging/compose.yaml deploy/production/compose.yaml; do
+            grep -qE "^[[:space:]]*image: ghcr\.io/${REPO}:" "$f" || {
+              echo "::error::no 'image: ghcr.io/${REPO}:...' line in $f — the pin pattern did not match; refusing to no-op silently"
+              exit 1
+            }
+            sed -i -E "s#^([[:space:]]*image: ghcr\.io/${REPO}:).*#\1sha-${SHA}#" "$f"
+            grep -qF "image: ghcr.io/${REPO}:sha-${SHA}" "$f" || {
+              echo "::error::$f does not name sha-${SHA} after the rewrite — the pin did not take"
+              exit 1
+            }
+          done
           # Only now does "no diff" unambiguously mean "already at this sha".
-          git diff --exit-code --quiet deploy/swarm/compose.yaml && { echo "already pinned"; exit 0; }
+          git diff --exit-code --quiet deploy && { echo "already pinned"; exit 0; }
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git commit -am "chore(deploy): swarm → sha-${SHA:0:12} [skip ci]"
+          git commit -am "chore(deploy): staging + production → sha-${SHA:0:12} [skip ci]"
           git push origin master

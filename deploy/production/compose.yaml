@@ -1,17 +1,17 @@
-# Docker Swarm stack "bartium" — bartium.io on the 3-Pi cluster.
+# Docker Swarm stack "bartium" — bartium.io on the production swarm.
 #
 # Deployed by Arcane's Git Sync (swarm mode), pointed at this file on master.
 # Git Sync is the only writer to this stack: deploy only what `master` says,
 # and roll back with `git revert` of the pin commit plus Arcane's next sync.
+# Staging and production run the same commit: deploy/staging/compose.yaml and
+# deploy/production/compose.yaml are pinned together.
 #
 # Prereq — one external Swarm secret, created once on a manager (deploy/README.md):
 #   bartium_cloudflared   Cloudflare Tunnel token (remotely-managed)
 #
 # Ingress is the stack's OWN Cloudflare Tunnel: cloudflared dials out to the
-# edge, so nothing publishes a port. It reaches nginx at http://web:80 over the
-# `internal` overlay — the service VIP follows rescheduling, so cloudflared
-# never learns a node IP. The tunnel is remotely managed: the token identifies
-# it, and the public hostnames (bartium.io + www -> http://web:80) live in the
+# edge, so nothing publishes a port. The tunnel is remotely managed: the token
+# identifies it, and the public hostname (bartium.io) and its origin live in the
 # Zero Trust dashboard, not here.
 #
 # The `image:` line is written by CI (.github/workflows/build.yml): every green
@@ -37,6 +37,8 @@ services:
     deploy:
       replicas: 2
       placement:
+        constraints:
+          - node.labels.role == apps
         preferences:
           - spread: node.id
       update_config:
@@ -71,6 +73,11 @@ services:
     # Cloudflare load-balances across them, so one node dying keeps ingress.
     deploy:
       replicas: 2
+      placement:
+        constraints:
+          - node.labels.role == apps
+        preferences:
+          - spread: node.id
       restart_policy:
         condition: any
       resources:
